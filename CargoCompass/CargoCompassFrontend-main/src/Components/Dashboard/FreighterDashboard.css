@@ -1,0 +1,231 @@
+:root {
+  --ff-oswald: 'Oswald', sans-serif;
+  --ff-rubik: 'Rubik', sans-serif;
+  --primary-color: #007bff;
+}
+
+.freighter-dashboard-sidebar {
+  background-color: #252a48;
+  color: white;
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  transition: left 0.3s;
+  font-family: var(--ff-oswald);
+  z-index: 1000;
+}
+
+.freighter-sidebar-header {
+  padding: 1rem;
+  font-family: var(--ff-oswald);
+  border-bottom: 1px solid #1f233e;
+}
+
+.freighter-sidebar-nav {
+  padding: 1rem 0;
+}
+
+.freighter-nav-item {
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.freighter-nav-item:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+}
+
+.freighter-nav-icon {
+  margin-right: 25px;
+}
+
+.freighter-section-title {
+  color: var(--dark-orange);
+  padding: 1rem;
+}
+
+.freighter-sidebar-footer {
+  padding: 1rem;
+  border-top: 1px solid #1f233e;
+}
+
+.freighter-help-btn {
+  width: 100%;
+  padding: 0.5rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.freighter-help-btn:hover {
+  width: 100%;
+  padding: 0.5rem;
+  background-color: white;
+  color: var(--primary-color);
+  border: none;
+  border-radius: 5px;
+}
+
+
+.freighter-user-bar {
+  display: flex;
+  align-items: center;
+  justify-content: block;
+  cursor: pointer;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 250px;
+  padding: 10px;
+  background-color: var(--primary-color);
+  border-top: 1px solid white;
+  transition: left 0.3s;
+  z-index: 1001;
+}
+
+.freighter-user-bar:hover {
+  background-color: white;
+  border-top: 1px solid black;
+  color: white;
+}
+
+.freighter-user-icon {
+  display: block;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.freighter-user-name {
+  font-weight: bold;
+  color: white;
+}
+
+.freighter-profile-dropdown {
+  display: none;
+  position: absolute;
+  bottom: 50px;
+  right: 0;
+  background-color: #1f233e;
+  border: 1px solid #444;
+  border-radius: 5px;
+  padding: 0.5rem;
+  width: 150px;
+  z-index: 1002;
+}
+
+.freighter-user-bar:hover .freighter-profile-dropdown,
+.freighter-user-bar.active .freighter-profile-dropdown {
+  display: block;
+}
+
+.freighter-logout-btn {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  background-color: #e63946;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.freighter-user-btn {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+
+.freighter-logout-btn:hover {
+  background-color: #d62839;
+}
+
+.freighter-sidebar-toggle {
+  display: none;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1002;
+  background-color: darkslateblue;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .freighter-sidebar-toggle {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1001;
+    background-color: darkslateblue;
+    border: none;
+    color: white;
+    padding: 10px;
+    font-size: 20px;
+  }
+
+  .freighter-dashboard-sidebar.collapsed {
+    min-width: 0;
+    width: 0;
+    overflow: hidden;
+  }
+  .freighter-sidebar-header {
+    margin-top: 40px;
+  }
+
+  .freighter-sidebar-nav.hidden,
+  .freighter-sidebar-section.hidden,
+  .freighter-user-bar.hidden {
+    display: none;
+  }
+
+  .freighter-dashboard-sidebar {
+    position: fixed;
+    height: 100vh;
+    width: 250px;
+    transition: width 0.2s;    
+  }
+
+  .freighter-user-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 250px;
+    background-color: var(--primary-color);
+    color: white;
+    justify-content: flex-start;
+    padding: 10px;
+    border-top: 1px solid white;
+    z-index: 1000;
+  }
+
+  .freighter-user-bar .freighter-user-icon,
+  .freighter-user-bar .freighter-user-name {
+    display: inline;
+  }
+
+}
+
+@media (min-width: 769px) {
+  .freighter-sidebar-toggle {
+    display: none;
+  }
+}

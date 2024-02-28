@@ -1,0 +1,224 @@
+:root {
+  --ff-oswald: 'Oswald', sans-serif;
+  --ff-rubik: 'Rubik', sans-serif;
+  --primary-color: #007bff;
+}
+
+.carrier-dashboard-sidebar {
+  background-color: #252a48;
+  color: white;
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  transition: left 0.3s;
+  font-family: var(--ff-oswald);
+  z-index: 1000;
+}
+
+.carrier-sidebar-header {
+  padding: 1rem;
+  font-family: var(--ff-oswald);
+  border-bottom: 1px solid #1f233e;
+}
+
+.carrier-sidebar-nav {
+  padding: 1rem 0;
+}
+
+.carrier-nav-item {
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  transition: background-color 0.3s;
+}
+.carrier-nav-item:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+}
+
+.carrier-nav-icon {
+  margin-right: 25px;
+}
+
+.carrier-section-title {
+  color: var(--dark-orange);
+  padding: 1rem;
+}
+
+.carrier-sidebar-footer {
+  padding: 1rem;
+  border-top: 1px solid #1f233e;
+}
+
+.carrier-help-btn {
+  width: 100%;
+  padding: 0.5rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+.carrier-help-btn:hover {
+  width: 100%;
+  padding: 0.5rem;
+  background-color: white;
+  color: var(--primary-color);
+  border: none;
+  border-radius: 5px;
+}
+
+
+.carrier-user-bar {
+  display: flex;
+  align-items: center;
+  justify-content: block;
+  cursor: pointer;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 250px;
+  padding: 10px;
+  background-color:var(--primary-color);
+  border-top: 1px solid white;
+  transition: left 0.3s;
+  z-index: 1001;
+}
+.carrier-user-bar:hover{
+  background-color:white;
+  border-top: 1px solid black;
+  color: white;
+ }
+.carrier-user-icon {
+  display: block;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.carrier-user-name {
+  font-weight: bold;
+  color: white;
+}
+
+.carrier-profile-dropdown {
+  display: none;
+  position: absolute;
+  bottom: 50px;
+  right: 0;
+  background-color: #1f233e;
+  border: 1px solid #444;
+  border-radius: 5px;
+  padding: 0.5rem;
+  width: 150px;
+  z-index: 1002;
+}
+
+.carrier-user-bar:hover .carrier-profile-dropdown,
+.carrier-user-bar.active .carrier-profile-dropdown {
+  display: block;
+}
+
+.carrier-logout-btn {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  background-color: #e63946;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.carrier-user-btn {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+
+.carrier-logout-btn:hover {
+  background-color: #d62839;
+}
+
+.carrier-sidebar-toggle {
+  display: none;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1002;
+  background-color: darkslateblue;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .carrier-sidebar-toggle {
+    display: block; /* Show the toggle button */
+    position: fixed; /* Fixed position */
+    top: 0; /* At the top */
+    left: 0; /* At the left */
+    z-index: 1001; /* Above other content */
+    background-color: darkslateblue; /* Styling */
+    border: none;
+    color: white;
+    padding: 10px;
+    font-size: 20px; /* Bigger to be easily tapped */
+  }
+
+  .carrier-dashboard-sidebar.collapsed {
+    min-width: 0;
+    width: 0;  
+    overflow: hidden;
+  }
+  .carrier-sidebar-header {
+    margin-top: 40px;
+  }
+
+  .carrier-sidebar-nav.hidden, .carrier-sidebar-section.hidden, .carrier-user-bar.hidden {
+    display: none;  
+  }
+
+  .carrier-dashboard-sidebar {
+    position: fixed; 
+    height: 100vh;
+    width: 250px;
+    transition: width 0.3s; /* Animated toggle effect */
+  }
+
+  .carrier-user-bar {
+    position: fixed; /* Fix user bar at the bottom */
+    bottom: 0; /* At the bottom */
+    left: 0; /* Align left */
+    width: 250px; /* Full width */
+    background-color: var(--primary-color);
+    color: white;
+    justify-content:flex-start; /* Space out items */
+    padding: 10px;
+    border-top: 1px solid white; /* Styling */
+    z-index: 1000; /* Above the sidebar */
+  }
+
+  .carrier-user-bar .carrier-user-icon, .carrier-user-bar .carrier-user-name {
+    display: inline; /* Show icon and name */
+  }
+
+}
+
+@media (min-width: 769px) {
+  .carrier-sidebar-toggle {
+    display: none; 
+  }
+}

@@ -1,0 +1,108 @@
+:root {
+  --sidebar-width: 250px;
+  --primary-color: #007bff;
+  --background-gradient-start: #c2e6f57a;
+  --background-gradient-end: #F4F3F6;
+  --ff-oswald: 'Oswald', sans-serif;
+  --ff-rubik: 'Rubik', sans-serif;
+  --quote-list-bg: #f8f9fa;
+  --quote-card-bg: #ffffff;
+  --quote-card-hover-bg: #e2e6ea;
+  --status-padding: 0.3em 0.6em;
+}
+
+.cargo-request-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  padding-left: 250px;  
+  height: auto;
+  min-height: 100vh; 
+  background: linear-gradient(to right, var(--background-gradient-start), var(--background-gradient-end));
+}
+
+.cargo-request-form {
+  background-color: var(--quote-card-bg);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  margin-top: 50px;
+  animation: slideDown 0.5s ease-in-out;
+
+}
+
+.cargo-request-form h2 {
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.cargo-request-form input,
+.cargo-request-form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #dee2e6;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.cargo-request-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cargo-request-form button:hover {
+  background-color: darken(var(--primary-color), 10%);
+  color: var(--primary-color);
+}
+.error {
+  color: #dc3545; /* Kırmızı metin rengi */
+  margin-top: 0.25rem; /* Üstten boşluk */
+  font-size: 0.875rem; /* Küçük metin boyutu */
+  font-weight: bold; /* Kalın metin */
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 1000px) {
+ 
+  .cargo-request-form {
+    margin-top: 20px;
+    width: auto; /* Genişlik otomatik ayarlanacak */
+    max-width: 100%; /* Maksimum genişliği ekranın tamamı yap */
+  }
+}
+@media (max-width: 768px) {
+  .cargo-request-container {
+    height: auto;
+    padding: 20px;
+  }
+
+  .cargo-request-form {
+    margin-top: 20px;
+    width: auto;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .cargo-request-form {
+    padding: 15px;
+  }
+
+  .cargo-request-form input,
+  .cargo-request-form select,
+  .cargo-request-form button {
+    padding: 8px;
+  }
+}

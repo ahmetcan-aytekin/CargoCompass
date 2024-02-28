@@ -1,0 +1,127 @@
+:root {
+    --sidebar-width: 250px;
+    --primary-color: #007bff;
+    --background-gradient-start: #c2e6f57a;
+    --background-gradient-end: #F4F3F6;
+    --ff-oswald: 'Oswald', sans-serif;
+    --ff-rubik: 'Rubik', sans-serif;
+    --quote-list-bg: #f8f9fa;
+    --quote-card-bg: #ffffff;
+    --quote-card-hover-bg: #e2e6ea;
+    --status-padding: 0.3em 0.6em;
+}
+.user-profile-page-container {
+    display: flex;
+    background: linear-gradient(to right, var(--background-gradient-start), var(--background-gradient-end));
+    min-height: 100vh; /* Tüm ekranı kaplar */
+
+  }
+  
+  .user-profile-page-content {
+    flex-grow: 1;
+    padding: 20px;
+    margin-left: var(--sidebar-width); /* Sidebar genişliği kadar sol kenar boşluğu */
+  }
+  
+  .user-profile-update,
+.change-password {
+  background-color: var(--quote-card-bg);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Gölge efekti eklendi */
+  margin-bottom: 20px; /* Alt kenar boşluğu */
+}
+
+/* Buton hover efekti */
+.user-profile-update button:hover,
+.change-password button:hover {
+  background-color: var(--primary-color);
+  opacity: 0.8; /* Hafif saydamlık */
+}
+
+/* Form etkin olduğunda gösterimi */
+.user-profile-update form.active,
+.change-password form.active {
+  display: block;
+}
+
+/* Form işlemleri için butonlar */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.form-actions button {
+  padding: 10px 20px;
+  margin-left: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease; /* Animasyon eklendi */
+}
+
+.form-actions button:nth-child(1) {
+  background-color: #dc3545; /* Kırmızı */
+  color: white;
+}
+
+.form-actions button:nth-child(2) {
+  background-color: #28a745; /* Yeşil */
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .user-profile-page-content {
+    padding: 10px;
+    margin-left: 0; /* Mobil cihazlarda sol kenar boşluğunu sıfırla */
+  }
+
+  .user-profile-update,
+  .change-password {
+    margin-top: 10px;
+    box-shadow: none; /* Mobil cihazlarda gölgeyi kaldır */
+  }
+
+  .form-actions {
+    flex-direction: column; /* Mobil cihazlarda düğmeleri sütun halinde göster */
+  }
+
+  .form-actions button {
+    width: 100%; /* Butonların genişliğini artır */
+    margin-top: 10px; /* Butonlar arası boşluk */
+  }
+}
+  .form-actions button:nth-child(1) {
+    background-color: #dc3545; /* Kırmızı */
+    color: white;
+  }
+  
+  .form-actions button:nth-child(2) {
+    background-color: #28a745; /* Yeşil */
+    color: white;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .user-profile-page-content {
+      padding: 10px;
+      margin-left: 0; /* Mobil cihazlarda sol kenar boşluğunu sıfırla */
+    }
+  
+    .user-profile-update,
+    .change-password {
+      margin-top: 10px;
+    }
+  
+    .form-actions {
+      flex-direction: column; /* Mobil cihazlarda düğmeleri sütun halinde göster */
+    }
+  
+    .form-actions button {
+      width: 100%; /* Butonların genişliğini artır */
+      margin-top: 10px; /* Butonlar arası boşluk */
+    }
+  }
+  

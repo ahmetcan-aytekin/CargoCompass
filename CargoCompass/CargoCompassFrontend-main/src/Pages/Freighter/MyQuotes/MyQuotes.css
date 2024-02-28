@@ -1,0 +1,274 @@
+:root {
+    --sidebar-width: 250px;
+    --primary-color: #007bff;
+    --background-gradient-start: #c2e6f57a;
+    --background-gradient-end: #F4F3F6;
+    --ff-oswald: 'Oswald', sans-serif;
+    --ff-rubik: 'Rubik', sans-serif;
+    --quote-list-bg: #f8f9fa;
+    --quote-card-bg: #ffffff;
+    --quote-card-hover-bg: #e2e6ea;
+    --status-padding: 0.3em 0.6em;
+}
+
+.body {
+    margin: 0;
+    font-family: var(--ff-rubik), sans-serif;
+}
+
+.quotes-dashboard-container {
+    display: flex;
+    min-height: 100vh;
+    font-family: var(--ff-oswald);
+    background: linear-gradient(to right, var(--background-gradient-start), var(--background-gradient-end));
+}
+
+.quotes-list {
+    background-color: var(--quote-list-bg);
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.quote-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--quote-card-bg);
+    border-bottom: 1px solid #dee2e6;
+    padding: 15px;
+    margin-bottom: 15px;
+    transition: background-color 0.3s ease;
+    opacity: 0;
+    position: relative;
+
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.quote-card:hover {
+    background-color: var(--quote-card-hover-bg);
+}
+
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.detail-row p {
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+
+.details-button {
+    padding: var(--status-padding);
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 25px;
+}
+
+.details-button:hover {
+    background-color: darken(var(--primary-color), 10%);
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+
+}
+
+.status {
+    padding: var(--status-padding);
+    border-radius: 4px;
+    font-size: 0.9em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.quotes-main-content {
+    flex-grow: 1;
+    padding: 20px;
+    margin-left: var(--sidebar-width);
+}
+
+.quotes-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.quotes-header h1 {
+    color: var(--primary-color);
+}
+
+.quotes-tabs {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    /* Yatay kaydırma çubuğu eklenir */
+
+}
+
+.quote-card:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transform: translateY(-3px);
+}
+
+.quote-info {
+    flex-grow: 1;
+}
+
+.tab {
+    border: none;
+    border-radius: 5px;
+    background-color: #e9ecef;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    padding: 10px 15px;
+    /* Mobilde daha küçük padding */
+    white-space: nowrap;
+    /* Metnin tek satırda kalmasını sağlar */
+}
+
+.tab.active,
+.tab:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.quote-detail h2 {
+    color: var(--primary-color);
+}
+
+
+.quote-status {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 5px;
+}
+
+.status {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #e9ecef;
+    color: #333;
+}
+
+.status.awaiting_pickup {
+    background-color: #ffc107;
+    /* Sarı */
+    color: #212529;
+}
+
+.status.assigned_to_carrier {
+    background-color: #17a2b8;
+    /* Açık Mavi */
+    color: #fff;
+}
+
+.status.in_transit {
+    background-color: #007bff;
+    /* Mavi */
+    color: #fff;
+}
+
+.status.delivered {
+    background-color: #28a745;
+    /* Yeşil */
+    color: #fff;
+}
+
+.status.cancelled {
+    background-color: #dc3545;
+    /* Kırmızı */
+    color: #fff;
+}
+
+@media (max-width: 1024px) {
+    .tab {
+        padding: 8px 12px;
+        /* Orta boyutlu cihazlarda padding */
+        font-size: 0.9em;
+        /* Orta boyutlu yazı */
+    }
+}
+
+@media (max-width: 768px) {
+    .quotes-main-content {
+        margin-left: 0;
+    }
+
+    .quote-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .quote-status {
+        position: static;
+        /* Revert to normal flow in small screens */
+        margin-top: 10px;
+        /* Space from the details */
+        justify-content: flex-end;
+        /* Align to the right */
+    }
+
+    .tab {
+        padding: 5px 10px;
+        font-size: 0.8em;
+        /* Daha küçük yazı boyutu */
+    }
+}
+
+@media (max-width: 576px) {
+    .details-button {
+        margin: 0;
+    }
+
+    .detail-row p,
+    button {
+        margin: 0;
+    }
+
+    .quotes-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .quotes-tabs {
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+
+    .tab {
+        flex-grow: 1;
+        text-align: center;
+        padding: 5px 10px;
+        font-size: 0.8em;
+        /* Küçük cihazlarda daha küçük yazı boyutu */
+
+    }
+}

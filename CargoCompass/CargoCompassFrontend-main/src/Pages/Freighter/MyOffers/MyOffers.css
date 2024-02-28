@@ -1,0 +1,247 @@
+:root {
+    --sidebar-width: 250px;
+    --primary-color: #007bff;
+    --background-gradient-start: #c2e6f57a;
+    --background-gradient-end: #F4F3F6;
+    --ff-oswald: 'Oswald', sans-serif;
+    --ff-rubik: 'Rubik', sans-serif;
+    --quote-list-bg: #f8f9fa;
+    --quote-card-bg: #ffffff;
+    --quote-card-hover-bg: #e2e6ea;
+    --status-padding: 0.3em 0.6em;
+}
+
+.offers-dashboard-container {
+    display: flex;
+    min-height: 100vh;
+    font-family: var(--ff-oswald);
+    background: linear-gradient(to right, var(--background-gradient-start), var(--background-gradient-end));
+}
+
+.offers-list {
+    background-color: var(--quote-list-bg);
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.offer-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--quote-card-bg);
+    border-bottom: 1px solid #dee2e6;
+    padding: 15px;
+    margin-bottom: 15px;
+    transition: background-color 0.3s ease;
+    position: relative;
+    opacity: 0; /* Animasyon başlangıcında görünmez olmalı */
+
+}
+
+.offer-card:hover {
+    background-color: var(--quote-card-hover-bg);
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.detail-row p {
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.details-button {
+    padding: var(--status-padding);
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 25px;
+}
+
+.details-button:hover {
+    background-color: darken(var(--primary-color), 10%);
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+}
+
+.status {
+    padding: var(--status-padding);
+    border-radius: 4px;
+    font-size: 0.9em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.offers-main-content {
+    flex-grow: 1;
+    padding: 20px;
+    margin-left: var(--sidebar-width);
+}
+
+.offers-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.offers-header h1 {
+    color: var(--primary-color);
+}
+
+.offers-tabs {
+    display: flex;
+    gap: 10px;
+}
+
+.offer-card:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transform: translateY(-3px);
+}
+
+.offer-info {
+    flex-grow: 1;
+}
+
+.tab {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #e9ecef;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.tab.active,
+.tab:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.offer-detail h2 {
+    color: var(--primary-color);
+}
+
+.offer-status {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 5px;
+}
+
+.status {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #e9ecef;
+    color: #333;
+}
+
+.status.pending {
+    background-color: #dad7cf;
+    color: #856404;
+}
+
+.status.accepted {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.status.rejected {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.accept-button {
+    background-color: #28a745;
+    /* Yeşil renk */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.reject-button {
+    background-color: #dc3545;
+    /* Kırmızı renk */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+
+@media (max-width: 768px) {
+    .offers-main-content {
+        margin-left: 0;
+    }
+
+    .offer-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .offer-status {
+        position: static;
+        margin-top: 10px;
+        justify-content: flex-end;
+    }
+}
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 576px) {
+    .details-button {
+        margin: 0;
+    }
+
+    .detail-row p,
+    button {
+        margin: 0;
+    }
+
+    .offers-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .offers-tabs {
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+
+    .tab {
+        flex-grow: 1;
+        text-align: center;
+    }
+}

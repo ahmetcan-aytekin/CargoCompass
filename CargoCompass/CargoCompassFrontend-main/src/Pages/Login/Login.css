@@ -1,0 +1,154 @@
+.login-section {
+  padding-top: 60px;
+  width: 100%;
+  height: calc(100vh - 120px);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.login-options-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  animation: slideDown 1s ease-in-out;
+
+}
+
+.login-option-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  cursor: pointer;
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+.login-option-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.login-option-image-wrapper {
+  margin-bottom: 1rem;
+}
+
+.login-option-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.login-option-link {
+  background-color: #007bff;
+  /* Default color */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  z-index: 1;
+}
+
+.login-option-icon {
+  font-size: 2rem;
+  color: #FFFFFF;
+}
+
+.login-option-text {
+  font-size: 1.5rem;
+  /* Significantly larger font size */
+  color: #333;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+/* Specific style for the Carrier button */
+.carrier .login-option-link {
+  background-color: #28a745;
+}
+
+/* Hover effect for the button */
+.login-option-link:hover {
+  background-color: darken(#007bff, 10%);
+  /* Darken function for hover */
+}
+
+.carrier .login-option-link {
+  background-color: #28a745;
+}
+
+/* Hover effect for the button */
+.login-option-link:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
+
+/* After and before pseudo-elements for additional hover effect */
+.login-option-link::after,
+.login-option-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -100%;
+  bottom: 0;
+  left: -100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  z-index: 0;
+  transition: right 0.4s, left 0.4s;
+}
+
+.login-option-link:hover::after {
+  right: 100%;
+}
+
+.login-option-link:hover::before {
+  left: 100%;
+}
+
+
+@media (max-width: 768px) {
+  .login-option-card {
+    width: 90%;
+    /* Full width in mobile view */
+    margin-bottom: 1rem;
+  }
+
+  .login-option-image {
+    width: 100px;
+    /* Smaller image size for mobile */
+    height: 100px;
+  }
+
+  .login-option-icon {
+    font-size: 1.5rem;
+
+  }
+
+  .login-option-text {
+    font-size: 1.2rem;
+  }
+
+  .login-section {
+    height: auto;
+  padding-bottom: 60px; 
+  }
+}

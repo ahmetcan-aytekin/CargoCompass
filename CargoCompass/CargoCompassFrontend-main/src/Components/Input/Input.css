@@ -1,0 +1,35 @@
+.inputContainer {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.inputLabel {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.inputField {
+  width: 100%;
+  padding: 0.75rem; 
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.inputFieldError {
+  border-color: #dc3545 !important;
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+.error {
+  color: #dc3545;
+  margin-top: 0.25rem;
+  font-size: 80%;
+}
